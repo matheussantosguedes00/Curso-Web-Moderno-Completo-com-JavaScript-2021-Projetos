@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+    document.querySelector('#primeiro').classList.add('destaque')
+
+const selecionar=seletor =>
+document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+const deselecionar=seletor => 
+document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+
+selecionar('div')
+
+deselecionar('*')
+
+selecionar('.terceiro.ultimo')//não importar ser esta diferente o importante e ter as dois nome de  class
+
+deselecionar('*')
+
+selecionar(':not(#primeiro)')//so não vai selecionar o primeiro
+
+deselecionar('*')
+
+selecionar(':nth-child(1)')// vai selecionar o span 
+
+deselecionar('*')
+
+selecionar('div:nth-of-type(1)') //vai pegar o primeiro elemento da div
+
+deselecionar('*')
+
+selecionar('[wb-attrib]')//vai seleciona  o elemento  attrib
+
+    </script>
+</body>
+</html>
